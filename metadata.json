@@ -1,0 +1,6 @@
+{
+  "name": "Minecraft Clone",
+  "description": "A 3D voxel-based building game with perfect 1x1 grid snapping, multiple block types, and a first-person interface.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
