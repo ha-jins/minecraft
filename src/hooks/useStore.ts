@@ -137,7 +137,7 @@ const initialData = (savedBlocks && Object.keys(savedBlocks).length > 0) ? saved
 
 // Initial precomputation
 const initialTorchContribs = calculateTorchContributions(initialData);
-const initialSunlight = getSunlightLevel(0.25); // Start at sunrise
+const initialSunlight = getSunlightLevel(0.35); // Start at morning
 
 // Initial sync
 Object.assign(worldGrid, initialData);
@@ -147,7 +147,7 @@ export const useStore = create<GameState>((set) => ({
   blocks: initialData,
   torchContributions: initialTorchContribs,
   lights: calculateLighting(initialData, initialTorchContribs, initialSunlight),
-  time: 0.25, // Start at sunrise
+  time: 0.35, // Start at morning
   addBlock: (x, y, z) => {
     set((prev) => {
       const key = `${x},${y},${z}`;
@@ -233,12 +233,12 @@ export const useStore = create<GameState>((set) => ({
     Object.assign(worldGrid, resetData);
     
     const torchContribs = calculateTorchContributions(resetData);
-    const sunlight = getSunlightLevel(0.25);
+    const sunlight = getSunlightLevel(0.35);
     set(() => ({ 
       blocks: resetData, 
       torchContributions: torchContribs,
       lights: calculateLighting(resetData, torchContribs, sunlight),
-      time: 0.25
+      time: 0.35
     }));
   },
 }));
